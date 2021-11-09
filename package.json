@@ -1,0 +1,30 @@
+{
+  "name": "-react-query-hw1",
+  "version": "1.0.0",
+  "description": "react-query",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandrSeleznyov/-react-query-hw1.git"
+  },
+  "author": "AleksandrSeleznyov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandrSeleznyov/-react-query-hw1/issues"
+  },
+  "homepage": "https://github.com/AlexandrSeleznyov/-react-query-hw1#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.3.0",
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.12"
+  }
+}
