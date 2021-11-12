@@ -3,7 +3,7 @@ const {
   getContactById,
   removeContact,
   addContact,
-} = require("./contacts.js");
+} = require("./controllers/contacts");
 
 const { Command } = require("commander");
 const program = new Command();
@@ -15,28 +15,26 @@ program
   .option("-p, --phone <type>", "user phone");
 
 program.parse(process.argv);
-console.log("process.argv", program.parse(process.argv));
 
 const argv = program.opts();
-console.log("argv", argv);
 
 // TODO: рефакторить
-function invokeAction({ action, id, name, email, phone }) {
+async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      listContacts();
+      return await listContacts();
       break;
 
     case "get":
-      getContactById(id);
+      return await getContactById(id);
       break;
 
     case "add":
-      addContact(name, email, phone);
+      return await addContact(name, email, phone);
       break;
 
     case "remove":
-      removeContact(id);
+      return await removeContact(id);
       break;
 
     default:
@@ -44,4 +42,6 @@ function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-invokeAction(argv);
+(async () => {
+  await invokeAction(argv);
+})();
